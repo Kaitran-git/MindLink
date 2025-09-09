@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Mental Health Challenge</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .test-link {
+            display: inline-block;
+            background: #4A90E2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-weight: 500;
+        }
+        .test-link:hover {
+            background: #357ABD;
+        }
+        .test-link.demo {
+            background: #66BB6A;
+        }
+        .test-link.demo:hover {
+            background: #5a9f5a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mental Health Challenge - Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Test Links</h2>
+        <p>Use these links to test different aspects of the application:</p>
+        
+        <h3>Normal Mode</h3>
+        <a href="index.html" class="test-link">Homepage (New Design)</a>
+        <a href="challenge.html" class="test-link">Challenge Page (if program started)</a>
+        
+        <h3>Demo Mode</h3>
+        <a href="index.html?demo=1" class="test-link demo">Homepage (Demo)</a>
+        <a href="challenge.html?demo=1" class="test-link demo">Challenge Page (Demo)</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Scenarios</h2>
+        <ol>
+            <li><strong>New Homepage Design:</strong> Check the welcoming layout with emoji icons and "How it works" section</li>
+            <li><strong>Skip Challenge Button:</strong> Test the demo "Skip Challenge" button in bottom-right corner</li>
+            <li><strong>Program Selection:</strong> Go to homepage and select a program length using the new card design</li>
+            <li><strong>Daily Tasks:</strong> Complete different types of tasks (timer, journal, checklist)</li>
+            <li><strong>Progress Tracking:</strong> Watch progress bar and circles update</li>
+            <li><strong>Day Locking:</strong> Try to access next day before completing current one</li>
+            <li><strong>Demo Mode:</strong> Use fast-forward button to skip days</li>
+            <li><strong>Completion:</strong> Complete all days to see celebration screen</li>
+            <li><strong>Persistence:</strong> Refresh page to ensure progress is saved</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li>Only one new day should unlock per calendar day (unless in demo mode)</li>
+            <li>Tasks must meet minimum requirements to enable "Complete Day" button</li>
+            <li>Progress should persist between page refreshes</li>
+            <li>All interactive components should work smoothly</li>
+            <li>Mobile design should be responsive and touch-friendly</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Browser Console</h2>
+        <p>Open browser developer tools (F12) to see any console messages or errors during testing.</p>
+    </div>
+</body>
+</html>

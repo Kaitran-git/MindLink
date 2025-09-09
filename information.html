@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Hub - MindLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo2.png" alt="MindLink Logo" class="nav-logo">
+                <h1>MindLink</h1>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab" data-section="home">Home</button>
+                <button class="nav-tab" data-section="challenger">Challenger</button>
+                <button class="nav-tab" data-section="support">Support System</button>
+                <button class="nav-tab" data-section="rewards">Rewards</button>
+                <button class="nav-tab active" data-section="information">Information Hub</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="information-header">
+            <div class="header-content">
+                <h1>Information Hub</h1>
+                <p>Personalized learning resources, daily motivation, and evidence-based mental health information tailored to your goals.</p>
+            </div>
+        </header>
+
+        <main class="information-main">
+            <!-- Daily Motivation Section -->
+            <section class="motivation-section">
+                <div class="section-header">
+                    <div class="section-icon">💡</div>
+                    <h2>Daily Motivation</h2>
+                    <p>Get personalized quotes and tips based on your goals</p>
+                </div>
+                
+                <div class="motivation-container">
+                    <div class="quote-card">
+                        <div class="quote-content">
+                            <div class="quote-text" id="dailyQuote">
+                                "Progress, not perfection, is the key to lasting change. Every small step you take today brings you closer to your goals."
+                            </div>
+                            <div class="quote-author" id="quoteAuthor">- MindLink AI</div>
+                        </div>
+                        <div class="quote-actions">
+                            <button class="quote-btn" id="newQuoteBtn">New Quote</button>
+                            <button class="quote-btn secondary" id="saveQuoteBtn">Save Quote</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-section">
+                        <h3>Today's Tips for Your Goals</h3>
+                        <div class="tips-list" id="tipsList">
+                            <div class="tip-item">
+                                <div class="tip-icon">🌱</div>
+                                <div class="tip-content">
+                                    <h4>Sleep Better</h4>
+                                    <p>Try the 4-7-8 breathing technique: inhale for 4, hold for 7, exhale for 8. Repeat 4 times before bed.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">📱</div>
+                                <div class="tip-content">
+                                    <h4>Reduce Screen Time</h4>
+                                    <p>Set a phone-free hour before bed. Use this time for reading, journaling, or gentle stretching.</p>
+                                </div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">🚶</div>
+                                <div class="tip-content">
+                                    <h4>Walk Daily</h4>
+                                    <p>Start with just 5 minutes. Even a short walk can boost your mood and energy levels.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Resources Section -->
+            <section class="learning-section">
+                <div class="section-header">
+                    <div class="section-icon">📚</div>
+                    <h2>AI-Personalized Learning</h2>
+                    <p>Curated resources based on your interests and mental health goals</p>
+                </div>
+                
+                <div class="learning-tabs">
+                    <button class="learning-tab active" data-category="articles">📄 Articles</button>
+                    <button class="learning-tab" data-category="studies">🔬 Studies</button>
+                    <button class="learning-tab" data-category="videos">🎥 Videos</button>
+                    <button class="learning-tab" data-category="podcasts">🎧 Podcasts</button>
+                </div>
+                
+                <div class="resources-container">
+                    <!-- Articles Tab -->
+                    <div class="resources-tab active" id="articlesTab">
+                        <div class="resource-card featured">
+                            <div class="resource-badge">Featured</div>
+                            <h3>Understanding Anxiety: A Complete Guide</h3>
+                            <p class="resource-description">Learn about the different types of anxiety, their causes, and evidence-based coping strategies that actually work.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">📄 Article</span>
+                                <span class="resource-time">8 min read</span>
+                                <span class="resource-topic">Anxiety Management</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Read Article</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h3>5 Mindfulness Techniques for Daily Life</h3>
+                            <p class="resource-description">Simple mindfulness practices you can integrate into your daily routine to reduce stress and improve focus.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">📄 Article</span>
+                                <span class="resource-time">5 min read</span>
+                                <span class="resource-topic">Mindfulness</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Read Article</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h3>Building Healthy Sleep Habits</h3>
+                            <p class="resource-description">Evidence-based strategies to improve your sleep quality and establish a consistent bedtime routine.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">📄 Article</span>
+                                <span class="resource-time">6 min read</span>
+                                <span class="resource-topic">Sleep Health</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Read Article</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Studies Tab -->
+                    <div class="resources-tab" id="studiesTab">
+                        <div class="resource-card featured">
+                            <div class="resource-badge">Latest Research</div>
+                            <h3>Effectiveness of Digital Mental Health Interventions</h3>
+                            <p class="resource-description">A comprehensive meta-analysis examining the efficacy of mobile apps and online therapy for anxiety and depression.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🔬 Study</span>
+                                <span class="resource-time">15 min read</span>
+                                <span class="resource-topic">Digital Health</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Read Study</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h3>Meditation and Brain Plasticity</h3>
+                            <p class="resource-description">Neuroscientific evidence showing how regular meditation practice can physically change your brain structure.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🔬 Study</span>
+                                <span class="resource-time">12 min read</span>
+                                <span class="resource-topic">Neuroscience</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Read Study</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Videos Tab -->
+                    <div class="resources-tab" id="videosTab">
+                        <div class="resource-card featured">
+                            <div class="resource-badge">Popular</div>
+                            <h3>Breathing Exercises for Anxiety Relief</h3>
+                            <p class="resource-description">A guided 10-minute session demonstrating various breathing techniques to calm your nervous system.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🎥 Video</span>
+                                <span class="resource-time">10 min</span>
+                                <span class="resource-topic">Breathing</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Watch Video</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h3>Understanding Depression: A Visual Guide</h3>
+                            <p class="resource-description">An animated explanation of depression, its symptoms, and treatment options in an easy-to-understand format.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🎥 Video</span>
+                                <span class="resource-time">8 min</span>
+                                <span class="resource-topic">Depression</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Watch Video</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Podcasts Tab -->
+                    <div class="resources-tab" id="podcastsTab">
+                        <div class="resource-card featured">
+                            <div class="resource-badge">New Episode</div>
+                            <h3>The Science of Happiness</h3>
+                            <p class="resource-description">Dr. Sarah Johnson discusses the latest research on what truly makes us happy and how to cultivate joy in daily life.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🎧 Podcast</span>
+                                <span class="resource-time">25 min</span>
+                                <span class="resource-topic">Happiness</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Listen Now</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h3>Mindful Living with Dr. Chen</h3>
+                            <p class="resource-description">Practical tips for incorporating mindfulness into your busy schedule and dealing with stress at work.</p>
+                            <div class="resource-meta">
+                                <span class="resource-type">🎧 Podcast</span>
+                                <span class="resource-time">20 min</span>
+                                <span class="resource-topic">Mindfulness</span>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="resource-btn primary">Listen Now</button>
+                                <button class="resource-btn secondary">Save for Later</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personalization Settings -->
+            <section class="personalization-section">
+                <div class="section-header">
+                    <div class="section-icon">⚙️</div>
+                    <h2>Personalize Your Learning</h2>
+                    <p>Customize your information feed based on your interests and goals</p>
+                </div>
+                
+                <div class="personalization-container">
+                    <div class="interests-section">
+                        <h3>Your Interests</h3>
+                        <div class="interest-tags">
+                            <label class="interest-tag">
+                                <input type="checkbox" value="anxiety" checked>
+                                <span>Anxiety Management</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="depression" checked>
+                                <span>Depression Support</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="mindfulness">
+                                <span>Mindfulness</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="sleep" checked>
+                                <span>Sleep Health</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="stress">
+                                <span>Stress Management</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="relationships">
+                                <span>Relationships</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="productivity">
+                                <span>Productivity</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="self-care">
+                                <span>Self-Care</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-settings">
+                        <h3>Notification Preferences</h3>
+                        <div class="setting-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="dailyQuoteNotif" checked>
+                                <span>Daily motivational quotes</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="weeklyDigest" checked>
+                                <span>Weekly learning digest</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="newContent">
+                                <span>New content alerts</span>
+                            </label>
+                        </div>
+                        <button class="save-settings-btn">Save Preferences</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Resources -->
+            <section class="saved-section">
+                <div class="section-header">
+                    <div class="section-icon">💾</div>
+                    <h2>Your Saved Resources</h2>
+                    <p>Quick access to your bookmarked articles, videos, and studies</p>
+                </div>
+                
+                <div class="saved-resources" id="savedResources">
+                    <div class="empty-state">
+                        <div class="empty-icon">📚</div>
+                        <h3>No saved resources yet</h3>
+                        <p>Start exploring and save resources that interest you!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="information-footer">
+            <div class="emergency-resources">
+                <p><strong>Need immediate help?</strong> If you're in crisis, call/text <a href="tel:988" class="emergency-link">988</a> (US) or your local emergency number.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="information.js"></script>
+</body>
+</html>

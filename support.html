@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support System - MindLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo2.png" alt="MindLink Logo" class="nav-logo">
+                <h1>MindLink</h1>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab" data-section="home">Home</button>
+                <button class="nav-tab" data-section="challenger">Challenger</button>
+                <button class="nav-tab active" data-section="support">Support System</button>
+                <button class="nav-tab" data-section="rewards">Rewards</button>
+                <button class="nav-tab" data-section="information">Information Hub</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="support-header">
+            <div class="header-content">
+                <h1>Support System</h1>
+                <p>Connect with your community, build your support network, and find professional help when you need it.</p>
+            </div>
+        </header>
+
+        <main class="support-main">
+            <!-- Local Clubs & Event Finder -->
+            <section class="support-section">
+                <div class="section-header">
+                    <div class="section-icon">📍</div>
+                    <h2>Local Clubs & Event Finder</h2>
+                    <p>Discover events and activities near you to build connections and combat loneliness.</p>
+                </div>
+                
+                <div class="finder-container">
+                    <div class="search-filters">
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="locationInput">Location</label>
+                                <input type="text" id="locationInput" placeholder="Enter your city or zip code" value="Current Location">
+                                <button class="location-btn" id="getLocationBtn">📍 Use Current Location</button>
+                            </div>
+                            <div class="filter-group">
+                                <label for="radiusSelect">Radius</label>
+                                <select id="radiusSelect">
+                                    <option value="5">5 miles</option>
+                                    <option value="10" selected>10 miles</option>
+                                    <option value="25">25 miles</option>
+                                    <option value="50">50 miles</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="ageRange">Age Range</label>
+                                <select id="ageRange">
+                                    <option value="all">All Ages</option>
+                                    <option value="18-25">18-25</option>
+                                    <option value="26-35">26-35</option>
+                                    <option value="36-50">36-50</option>
+                                    <option value="51-65">51-65</option>
+                                    <option value="65+">65+</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="genderFilter">Gender</label>
+                                <select id="genderFilter">
+                                    <option value="all">All Genders</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="non-binary">Non-binary</option>
+                                    <option value="mixed">Mixed Groups</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="costFilter">Cost</label>
+                                <select id="costFilter">
+                                    <option value="all">Any Cost</option>
+                                    <option value="free">Free</option>
+                                    <option value="low">Under $20</option>
+                                    <option value="medium">$20-$50</option>
+                                    <option value="high">$50+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="interestFilter">Interests</label>
+                                <div class="interest-tags">
+                                    <label class="tag-option"><input type="checkbox" value="mental-health"> Mental Health</label>
+                                    <label class="tag-option"><input type="checkbox" value="fitness"> Fitness</label>
+                                    <label class="tag-option"><input type="checkbox" value="art"> Art & Creativity</label>
+                                    <label class="tag-option"><input type="checkbox" value="music"> Music</label>
+                                    <label class="tag-option"><input type="checkbox" value="book"> Book Clubs</label>
+                                    <label class="tag-option"><input type="checkbox" value="volunteer"> Volunteering</label>
+                                    <label class="tag-option"><input type="checkbox" value="tech"> Technology</label>
+                                    <label class="tag-option"><input type="checkbox" value="outdoor"> Outdoor Activities</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="search-btn" id="searchEventsBtn">🔍 Search Events</button>
+                    </div>
+                    
+                    <div class="events-results" id="eventsResults">
+                        <div class="loading-state" id="eventsLoading" style="display: none;">
+                            <div class="loading-spinner"></div>
+                            <p>Finding events near you...</p>
+                        </div>
+                        <div class="events-list" id="eventsList">
+                            <!-- Events will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Friends & Family Circle -->
+            <section class="support-section">
+                <div class="section-header">
+                    <div class="section-icon">👥</div>
+                    <h2>Friends & Family Circle</h2>
+                    <p>Invite your loved ones to support your mental health journey with guided resources.</p>
+                </div>
+                
+                <div class="circle-container">
+                    <div class="invite-section">
+                        <h3>Invite Supporters</h3>
+                        <div class="invite-form">
+                            <input type="email" id="inviteEmail" placeholder="Enter email address">
+                            <select id="relationshipType">
+                                <option value="family">Family Member</option>
+                                <option value="friend">Friend</option>
+                                <option value="partner">Partner/Spouse</option>
+                                <option value="caregiver">Caregiver</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <button class="invite-btn" id="sendInviteBtn">Send Invitation</button>
+                        </div>
+                        <p class="invite-note">They'll receive a guide on how to support you and can track your progress (with your permission).</p>
+                    </div>
+                    
+                    <div class="supporters-list">
+                        <h3>Your Support Network</h3>
+                        <div class="supporters-grid" id="supportersGrid">
+                            <div class="supporter-card">
+                                <div class="supporter-avatar">👨‍👩‍👧‍👦</div>
+                                <div class="supporter-info">
+                                    <h4>Family Circle</h4>
+                                    <p>3 members</p>
+                                    <span class="status active">Active</span>
+                                </div>
+                            </div>
+                            <div class="supporter-card">
+                                <div class="supporter-avatar">👫</div>
+                                <div class="supporter-info">
+                                    <h4>Close Friends</h4>
+                                    <p>5 members</p>
+                                    <span class="status active">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="support-guides">
+                        <h3>Support Guides for Your Circle</h3>
+                        <div class="guides-grid">
+                            <div class="guide-card">
+                                <h4>How to Support Someone with Anxiety</h4>
+                                <p>Practical tips for family and friends to help during difficult moments.</p>
+                                <button class="guide-btn">Read Guide</button>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Recognizing Depression Signs</h4>
+                                <p>Learn to identify warning signs and when to encourage professional help.</p>
+                                <button class="guide-btn">Read Guide</button>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Active Listening Techniques</h4>
+                                <p>How to listen without judgment and provide emotional support.</p>
+                                <button class="guide-btn">Read Guide</button>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Setting Healthy Boundaries</h4>
+                                <p>Balancing support with personal wellbeing for caregivers.</p>
+                                <button class="guide-btn">Read Guide</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Therapy Access Directory -->
+            <section class="support-section">
+                <div class="section-header">
+                    <div class="section-icon">🩺</div>
+                    <h2>Therapy Access Directory</h2>
+                    <p>Find professional mental health support that fits your needs, schedule, and budget.</p>
+                </div>
+                
+                <div class="therapy-container">
+                    <div class="therapy-filters">
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="therapyType">Type of Therapy</label>
+                                <select id="therapyType">
+                                    <option value="all">All Types</option>
+                                    <option value="individual">Individual Therapy</option>
+                                    <option value="group">Group Therapy</option>
+                                    <option value="couples">Couples Therapy</option>
+                                    <option value="family">Family Therapy</option>
+                                    <option value="online">Online Therapy</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="therapyLocation">Location</label>
+                                <input type="text" id="therapyLocation" placeholder="City or zip code">
+                            </div>
+                            <div class="filter-group">
+                                <label for="priceRange">Price Range</label>
+                                <select id="priceRange">
+                                    <option value="all">Any Price</option>
+                                    <option value="sliding">Sliding Scale</option>
+                                    <option value="low">Under $50/session</option>
+                                    <option value="medium">$50-$100/session</option>
+                                    <option value="high">$100+/session</option>
+                                    <option value="insurance">Insurance Accepted</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="specialties">Specialties</label>
+                                <div class="specialty-tags">
+                                    <label class="tag-option"><input type="checkbox" value="anxiety"> Anxiety</label>
+                                    <label class="tag-option"><input type="checkbox" value="depression"> Depression</label>
+                                    <label class="tag-option"><input type="checkbox" value="trauma"> Trauma/PTSD</label>
+                                    <label class="tag-option"><input type="checkbox" value="addiction"> Addiction</label>
+                                    <label class="tag-option"><input type="checkbox" value="lgbtq"> LGBTQ+</label>
+                                    <label class="tag-option"><input type="checkbox" value="grief"> Grief & Loss</label>
+                                    <label class="tag-option"><input type="checkbox" value="relationships"> Relationships</label>
+                                    <label class="tag-option"><input type="checkbox" value="work"> Work Stress</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="availability">Availability</label>
+                                <select id="availability">
+                                    <option value="all">Any Time</option>
+                                    <option value="morning">Morning (6AM-12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM-6PM)</option>
+                                    <option value="evening">Evening (6PM-10PM)</option>
+                                    <option value="weekend">Weekends</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="language">Language</label>
+                                <select id="language">
+                                    <option value="english">English</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="french">French</option>
+                                    <option value="mandarin">Mandarin</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="search-btn" id="searchTherapyBtn">🔍 Find Therapists</button>
+                    </div>
+                    
+                    <div class="therapy-results" id="therapyResults">
+                        <div class="loading-state" id="therapyLoading" style="display: none;">
+                            <div class="loading-spinner"></div>
+                            <p>Searching for therapists...</p>
+                        </div>
+                        <div class="therapists-list" id="therapistsList">
+                            <!-- Therapists will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="support-footer">
+            <div class="emergency-resources">
+                <p><strong>Need immediate help?</strong> If you're in crisis, call/text <a href="tel:988" class="emergency-link">988</a> (US) or your local emergency number.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="support.js"></script>
+</body>
+</html>

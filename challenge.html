@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge - MindLink (Demo)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo2.png" alt="MindLink Logo" class="nav-logo">
+                <h1>MindLink</h1>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab" data-section="home">Home</button>
+                <button class="nav-tab active" data-section="challenger">Challenger</button>
+                <button class="nav-tab" data-section="support">Support System</button>
+                <button class="nav-tab" data-section="rewards">Rewards</button>
+                <button class="nav-tab" data-section="information">Information Hub</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Program Selection Section -->
+        <section class="program-selection" id="programSelection">
+            <div class="selection-intro">
+                <h2>Choose Your Mental Health Journey</h2>
+                <p>Select the length of your daily challenge. Each day unlocks a new practice designed to support your mental wellbeing.</p>
+            </div>
+            
+            <div class="challenge-cards">
+                <div class="challenge-card" data-program="7">
+                    <div class="card-icon">🌱</div>
+                    <h3>7 Days</h3>
+                    <p class="card-subtitle">A gentle introduction</p>
+                    <p class="card-description">Perfect for getting started with simple daily practices like breathing exercises and gratitude.</p>
+                    <button class="start-button" data-program="7">Start 7-Day Journey</button>
+                </div>
+
+                <div class="challenge-card recommended" data-program="15">
+                    <div class="card-icon">🌿</div>
+                    <h3>15 Days</h3>
+                    <p class="card-subtitle">Build lasting habits</p>
+                    <p class="card-description">A balanced approach with easy and moderate tasks to help you develop sustainable mental health practices.</p>
+                    <div class="recommended-badge">Recommended</div>
+                    <button class="start-button" data-program="15">Start 15-Day Journey</button>
+                </div>
+
+                <div class="challenge-card" data-program="30">
+                    <div class="card-icon">🌳</div>
+                    <h3>30 Days</h3>
+                    <p class="card-subtitle">Transform your wellbeing</p>
+                    <p class="card-description">A comprehensive journey with advanced techniques to help you build a strong foundation for ongoing mental health.</p>
+                    <button class="start-button" data-program="30">Start 30-Day Journey</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenge Interface (hidden initially) -->
+        <div class="challenge-interface" id="challengeInterface" style="display: none;">
+            <header class="challenge-header">
+                <div class="header-top">
+                    <div class="demo-mode" id="demoMode" style="display: none;">
+                        <span class="demo-pill">Demo Mode</span>
+                        <button class="fast-forward-btn" id="fastForwardBtn">Fast-forward 1 day</button>
+                    </div>
+                </div>
+                
+                <div class="progress-section">
+                    <div class="program-badge" id="programBadge">Day 1 of 7</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-circles" id="progressCircles"></div>
+                </div>
+            </header>
+
+            <main class="challenge-main">
+                <div class="task-container" id="taskContainer">
+                    <!-- Task content will be dynamically loaded here -->
+                </div>
+
+                <div class="locked-day" id="lockedDay" style="display: none;">
+                    <div class="locked-content">
+                        <h2>Come back tomorrow!</h2>
+                        <p id="lockedMessage">Come back tomorrow to unlock Day X.</p>
+                        <div class="resources-strip">
+                            <h3>Quick Resources</h3>
+                            <div class="resource-buttons">
+                                <button class="resource-btn" data-resource="breathing">Breathing</button>
+                                <button class="resource-btn" data-resource="grounding">Grounding (5-4-3-2-1)</button>
+                                <button class="resource-btn" data-resource="affirmation">Positive Affirmation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="completion-screen" id="completionScreen" style="display: none;">
+                    <div class="completion-content">
+                        <div class="confetti" id="confetti"></div>
+                        <h2>Congratulations! 🎉</h2>
+                        <p id="completionMessage">You finished 7 days!</p>
+                        <div class="badge-display" id="badgeDisplay"></div>
+                        <div class="completion-actions">
+                            <button class="action-btn primary" id="restartBtn">Start New Challenge</button>
+                            <button class="action-btn secondary" id="shareBtn">Share Your Badge</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="challenge-footer">
+            <div class="emergency-resources">
+                <p>If you're in crisis, call/text <a href="tel:988" class="emergency-link">988</a> (US) or your local emergency number.</p>
+            </div>
+        </footer>
+
+        <!-- Restart Demo Button -->
+        <button class="skip-challenge-btn" id="skipChallengeBtn" title="Restart demo">
+            Restart Demo
+        </button>
+    </div>
+
+    <!-- Resource Modals -->
+    <div class="modal" id="resourceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
